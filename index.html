@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Reelhouse - browse, search and explore movies by genre.">
+  <title>Reelhouse | Movie Explorer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="navbar" id="navbar">
+    <a href="#home" class="logo">Reel<span>house</span></a>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#trending">Trending</a>
+      <a href="#browse">Browse</a>
+      <a href="#footer">Contact</a>
+    </nav>
+
+    <form class="search" id="searchForm" role="search">
+      <label for="searchInput" class="sr-only">Search movies by name</label>
+      <input type="search" id="searchInput" placeholder="Search movies..." autocomplete="off">
+    </form>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <p class="hero-tag">Featured tonight</p>
+        <h1 id="heroTitle">Interstellar</h1>
+        <p class="hero-meta" id="heroMeta"></p>
+        <p class="hero-desc" id="heroDesc"></p>
+        <div class="hero-actions">
+          <button class="btn btn-primary" id="heroDetails">View details</button>
+          <a class="btn btn-ghost" id="heroTrailer" href="#" target="_blank" rel="noopener">Watch trailer</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trending -->
+    <section class="section" id="trending">
+      <div class="section-head">
+        <h2>Trending now</h2>
+        <p>The most-watched picks this week.</p>
+      </div>
+      <div class="trending-row" id="trendingRow"></div>
+    </section>
+
+    <!-- Browse -->
+    <section class="section" id="browse">
+      <div class="section-head">
+        <h2>Browse movies</h2>
+        <p id="resultCount"></p>
+      </div>
+      <div class="genres" id="genreFilters" role="group" aria-label="Filter by genre"></div>
+      <div class="movie-grid" id="movieGrid"></div>
+      <p class="empty" id="emptyState" hidden>No movies match your search. Try another title or pick a different genre.</p>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" id="footer">
+    <div class="footer-inner">
+      <div>
+        <a href="#home" class="logo">Reel<span>house</span></a>
+        <p class="footer-note">A student project for exploring movies by title and genre.</p>
+      </div>
+      <div>
+        <h3>Explore</h3>
+        <a href="#trending">Trending</a>
+        <a href="#browse">Browse</a>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <a href="mailto:hello@reelhouse.example">hello@reelhouse.example</a>
+      </div>
+    </div>
+    <p class="copyright">&copy; 2026 Reelhouse. Movie details are for demonstration only.</p>
+  </footer>
+
+  <!-- Movie details -->
+  <dialog class="modal" id="movieModal" aria-labelledby="modalTitle">
+    <button class="modal-close" id="modalClose" aria-label="Close details">&times;</button>
+    <div class="modal-body" id="modalBody"></div>
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>
